@@ -6,7 +6,7 @@
         xmlns:winforms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:local="clr-namespace:Advatech2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="580" Width="1200">
+        Title="MainWindow" Height="620" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -104,9 +104,9 @@
                             Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=3}">            
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="Auto" />
-                            <DataGridComboBoxColumn Header="Parent" SelectedItemBinding="{Binding Parent}" Width="*" ItemsSource="{Binding DataContext.ParentOptions, RelativeSource={RelativeSource AncestorType=Window}}" >
+                            <DataGridComboBoxColumn x:Name="ParentColumn" Header="Parent" SelectedItemBinding="{Binding Parent}" Width="*" >
                             </DataGridComboBoxColumn>
-                            <DataGridComboBoxColumn Header="Type" SelectedItemBinding="{Binding Type}" Width="*" ItemsSource="{Binding DataContext.TypeOptions, RelativeSource={RelativeSource AncestorType=Window}}" />
+                            <DataGridComboBoxColumn x:Name="Type1Column" Header="Type" SelectedItemBinding="{Binding Type}" Width="*" />
                             <DataGridTextColumn Header="Pattern" Binding="{Binding Pattern}" Width="2*" />
                             <DataGridTextColumn Header="Margin" Binding="{Binding Margin}" Width="*" />
                             <DataGridTextColumn Header="Position" Binding="{Binding Position}" Width="2*" />
@@ -199,11 +199,11 @@
                         Grid.Row="6" d:ItemsSource="{d:SampleData ItemCount=13}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="2*" />
-                            <DataGridComboBoxColumn Header="LA" SelectedItemBinding="{Binding LA}" Width="*" ItemsSource="{Binding DataContext.ParentOptions, RelativeSource={RelativeSource AncestorType=Window}}" />
-                            <DataGridComboBoxColumn Header="TA" SelectedItemBinding="{Binding TA}" Width="*" ItemsSource="{Binding DataContext.TypeOptions, RelativeSource={RelativeSource AncestorType=Window}}" />
-                            <DataGridComboBoxColumn Header="RA" SelectedItemBinding="{Binding RA}" Width="*" ItemsSource="{Binding DataContext.TypeOptions, RelativeSource={RelativeSource AncestorType=Window}}" />
-                            <DataGridComboBoxColumn Header="BA" SelectedItemBinding="{Binding BA}" Width="*" ItemsSource="{Binding DataContext.TypeOptions, RelativeSource={RelativeSource AncestorType=Window}}" />
-                            <DataGridTextColumn Header="Type" Binding="{Binding Position}" Width="2*" />
+                            <DataGridComboBoxColumn x:Name="LAColumn" Header="LA" SelectedItemBinding="{Binding LA}" Width="*" />
+                            <DataGridComboBoxColumn x:Name="TAColumn" Header="TA" SelectedItemBinding="{Binding TA}" Width="*" />
+                            <DataGridComboBoxColumn x:Name="RAColumn" Header="RA" SelectedItemBinding="{Binding RA}" Width="*" />
+                            <DataGridComboBoxColumn x:Name="BAColumn" Header="BA" SelectedItemBinding="{Binding BA}" Width="*" />
+                            <DataGridComboBoxColumn x:Name="Type2Column" Header="Type" SelectedItemBinding="{Binding Type}" Width="2*" />
                             <DataGridTextColumn Header="Value" Binding="{Binding Position}" Width="2*" />
                         </DataGrid.Columns>
                     </DataGrid>
